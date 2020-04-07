@@ -40,11 +40,12 @@ public:
     Block & draw();
     Block & clear();
 
-    Block & value(double value);
-    double value();
+    Block & value(float value);
+    float value();
 
     Block & position(int x, int y);
     Position position();
+    Position grid();
 
     Block & size(int x, int y);
     Size size();
@@ -52,13 +53,20 @@ public:
     Block & color(int r, int g, int b);
     Color color();
 
+    
+
 private:
-    double _value;
+    float _value;
     Size _size;
     Position _position;
-    Color _color;
+    Color _color_current;
+    Color _color_stored;
 
 }; /* class: Block */
 
+void block_remove_dc(Block ** block, int number);
+void block_normalise(Block ** block, int number);
+Block ** block_init(int number, float freq, int depth, int seed);
+Block * block_start(Block ** block, int number);
 
 #endif /* define: block_h */

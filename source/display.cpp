@@ -14,7 +14,6 @@ void d_open(int size_x, int size_y, const char * name)
     gfx_display = XOpenDisplay(0);
     gfx_window = XCreateSimpleWindow(gfx_display, DefaultRootWindow(gfx_display), 0, 0, size_x, size_y, 0, 0, 0);
 
-
     XSetWindowAttributes attr;
 	attr.backing_store = Always;
 
@@ -40,12 +39,13 @@ void d_open(int size_x, int size_y, const char * name)
 		if (e.type == MapNotify)
 			break;
 	}
-
 }
 
 void d_close()
 {
-
+    XFreeGC(gfx_display, gfx_gc);
+	XDestroyWindow(gfx_display, gfx_window);
+	XCloseDisplay(gfx_display);		
 }
 
 void d_color(int r, int g, int b)
