@@ -1,9 +1,10 @@
 
 files := 	main.cpp \
 			source/display.cpp \
-			source/block.cpp \
-			source/perlin.cpp \
-			source/generator.cpp
+			source/generator.cpp \
+			source/node.cpp \
+			source/grid.cpp \
+			source/algs.cpp
 
 
 all:

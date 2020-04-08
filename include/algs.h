@@ -9,6 +9,9 @@
  * @details	
 **/
 
+#include "grid.h"
 
+int climb(Grid * grid, Node * current, int number);
+int greedy(Grid * grid, Node * current, int number);
 
 #endif /* define: climb_h */
