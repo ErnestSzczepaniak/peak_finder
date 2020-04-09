@@ -1,7 +1,7 @@
 #include "algs.h"
 #include "display.h"
 
-int climb(Grid * grid, Node * current, int number)
+Result climb(Grid * grid, Node * current, int number)
 {
     int steps = 0;
 
@@ -46,10 +46,10 @@ int climb(Grid * grid, Node * current, int number)
     current->blink(200);
     current->blink(200);
 
-    return steps;
+    return {steps, current};
 }
 
-int greedy(Grid * grid, Node * current, int number)
+Result greedy(Grid * grid, Node * current, int number)
 {
     int steps = 0;
 
@@ -90,5 +90,5 @@ int greedy(Grid * grid, Node * current, int number)
     current->blink(200);
     current->blink(200);
 
-    return steps;
+    return {steps, current};
 }

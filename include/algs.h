@@ -11,7 +11,14 @@
 
 #include "grid.h"
 
-int climb(Grid * grid, Node * current, int number);
-int greedy(Grid * grid, Node * current, int number);
+struct Result
+{
+    int steps;
+    Node * peak;
+}; /* structure: Result */
+
+
+Result climb(Grid * grid, Node * current, int number);
+Result greedy(Grid * grid, Node * current, int number);
 
 #endif /* define: climb_h */
